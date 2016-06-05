@@ -1,1 +1,1 @@
-{"datasetType": "locResults", "sliceID": null, "acqID": 1, "posID": [0], "channelID": "A647", "prefix": "HeLaL_Control"}
+{"channelID": "A647", "datasetType": "locResults", "sliceID": null, "posID": [0], "acqID": 1, "prefix": "HeLaL_Control"}
