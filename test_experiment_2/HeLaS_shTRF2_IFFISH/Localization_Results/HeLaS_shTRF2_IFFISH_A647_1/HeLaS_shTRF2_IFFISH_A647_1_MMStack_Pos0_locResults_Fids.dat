@@ -1,1 +1,2 @@
-,region_id,x [nm],y [nm],z [nm],frame,uncertainty [nm],intensity [photon],offset [photon],loglikelihood,sigma [nm]
+localization_id,region_id,x,y,z,frame,uncertainty,intensity,offset,loglikelihood,sigma
+0,0,50,51,0,100,5,2000,200,250,130
