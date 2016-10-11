@@ -9,6 +9,11 @@ import bstore.database as db
 from pathlib import Path
 
 directory = Path('./')
-parser    = pr.MMParser(readTiffTags = True)
-myDB      = db.HDFDatabase('test_experiment_db.h5')
-myDB.build(parser, directory)
+myDS      = db.HDFDatabase('test_experiment_db.h5')
+
+parser = pr.MMParser()
+filenameStrings = {
+    'Localizations'  : '_locResults.dat',
+    'LocMetadata'    : '_locMetadata.json',
+    'WidefieldImage' : 'WF*ome.tif'}
+myDS.build(parser, directory, filenameStrings, readTiffTags = True)
