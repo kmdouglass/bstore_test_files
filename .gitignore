@@ -1,1 +1,3 @@
 my*.h5
+*.lock
+.ipynb_checkpoints
