@@ -4,16 +4,20 @@ Created on Thu Aug 11 14:50:05 2016
 
 @author: douglass
 """
-import bstore.parsers  as pr
 import bstore.database as db
+import bstore.config as cfg
 from pathlib import Path
+from bsplugins.leb import MMParser
+
+cfg.__Registered_DatasetTypes__ = ['Localizations', 'WidefieldImage', 'LocMetadata']
 
 directory = Path('./')
-myDS      = db.HDFDatabase('test_experiment_db.h5')
 
-parser = pr.MMParser()
+parser = MMParser()
 filenameStrings = {
     'Localizations'  : '_locResults.dat',
     'LocMetadata'    : '_locMetadata.json',
     'WidefieldImage' : 'WF*ome.tif'}
-myDS.build(parser, directory, filenameStrings, readTiffTags = True)
+
+with db.HDFDatastore('test_experiment_db.h5') as myDS:
+    myDS.build(parser, directory, filenameStrings, readTiffTags = True)
